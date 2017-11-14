@@ -6,7 +6,7 @@
 /*   By: ybouzgao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 21:23:11 by ybouzgao          #+#    #+#             */
-/*   Updated: 2017/11/11 14:06:01 by ybouzgao         ###   ########.fr       */
+/*   Updated: 2017/11/14 14:20:22 by ybouzgao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,15 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if ((ss = (char *)malloc(sizeof(char) * (len + 1))) == 0)
 		return (NULL);
-	while (i < len)
+	if (s)
 	{
-		ss[i] = s[start];
-		i++;
-		start++;
+		while (i < len)
+		{
+			ss[i] = s[start];
+			i++;
+			start++;
+		}
+		ss[i] = '\0';
 	}
-	ss[i] = '\0';
 	return (ss);
 }

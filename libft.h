@@ -6,7 +6,7 @@
 /*   By: ybouzgao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 19:28:06 by ybouzgao          #+#    #+#             */
-/*   Updated: 2017/11/13 16:28:43 by ybouzgao         ###   ########.fr       */
+/*   Updated: 2017/11/14 17:52:17 by ybouzgao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strdup(const char *s1);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);

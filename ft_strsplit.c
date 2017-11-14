@@ -6,7 +6,7 @@
 /*   By: ybouzgao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 14:18:11 by ybouzgao          #+#    #+#             */
-/*   Updated: 2017/11/11 12:42:55 by ybouzgao         ###   ########.fr       */
+/*   Updated: 2017/11/14 17:38:52 by ybouzgao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static int	nbw(char *s, char c)
 	{
 		while (s[i] != c && s[i])
 		{
-			i++;
 			sym = 1;
+			i++;
 		}
 		while (s[i] == c && s[i])
 		{
-			count += (sym == 1) ? 1 : 0;
+			count += sym;
 			sym = 0;
 			i++;
 		}
@@ -62,21 +62,19 @@ char		**ft_strsplit(const char *s, char c)
 
 	i = 0;
 	j = 0;
-	if ((res = malloc(sizeof(char *) * nbw((char *)s, c))) == NULL)
+	s = ft_strtrimc(s, c);
+	if (!s || !(res = malloc(sizeof(char *) * nbw((char *)s, c))))
 		return (NULL);
 	while (s[i])
 	{
+		k = 0;
+		if (!(res[j] = malloc(sizeof(c) * nbc((char*)s, i, c))))
+			return (0);
+		while (s[i] != c && s[i])
+			res[j][k++] = s[i++];
 		while (s[i] == c && s[i])
 			i++;
-		if (s[i])
-		{
-			k = 0;
-			if ((res[j] = malloc(sizeof(char) * nbc((char*)s, i, c))) == NULL)
-				return (NULL);
-			while (s[i] != c && s[i])
-				res[j][k++] = s[i++];
-			res[j++][k] = '\0';
-		}
+		res[j++][k] = '\0';
 	}
 	res[j] = NULL;
 	return (res);

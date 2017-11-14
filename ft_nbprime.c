@@ -6,7 +6,7 @@
 /*   By: ybouzgao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:30:15 by ybouzgao          #+#    #+#             */
-/*   Updated: 2017/11/13 13:44:57 by ybouzgao         ###   ########.fr       */
+/*   Updated: 2017/11/13 19:58:37 by ybouzgao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	*ft_nbprimebis(int *tab, int i, int j, int nb)
 	{
 		j = 1;
 		k = 0;
-		while (j < i)
+		while (j * j < i)
 		{
 			if ((i % j) == 0)
 				k++;

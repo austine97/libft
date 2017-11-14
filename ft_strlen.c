@@ -6,11 +6,13 @@
 /*   By: ybouzgao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:31:35 by ybouzgao          #+#    #+#             */
-/*   Updated: 2017/11/09 17:59:36 by ybouzgao         ###   ########.fr       */
+/*   Updated: 2017/11/14 13:59:38 by ybouzgao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int i;
 
